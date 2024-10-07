@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Fuentes y reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    line-height: 1.6;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Hace que el body ocupe el 100% de la altura de la pantalla */
+}
+
+/* Variables globales */
+:root {
+    --color-background: #f9f9f9;
+    --color-text: #333;
+    --color-primary: #1e90ff;
+    --color-secondary: #ff6347;
+    --color-border: #e0e0e0;
+    
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-large: 1.25rem;
+    
+    --spacing-small: 0.5rem;
+    --spacing-base: 1rem;
+    --spacing-large: 2rem;
+
+    --border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+   text-transform: uppercase;
+    font-size: var(--font-size-large);
+    color: #000;
+    font-weight: 900;
+    grid-column: span 2; /* Hace que el título ocupe ambas columnas, quedando arriba */
+}
+
+input {
+    width: 100%;
+    font-size: var(--font-size-base);
+    border: none;
+}
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important; /* Si el borde sigue apareciendo */
+}
+
+    
+button {
+    width: 100%;
+    padding: var(--spacing-base);
+    background-color: var(--color-primary);
+    color: white;
+    font-size: var(--font-size-base);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Mensajes de error */
+strong {
+    color: var(--color-secondary);
+    display: block;
+    text-align: center;
+    margin-top: var(--spacing-base);
+}
+
+.formulario {
+  
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-template-rows: auto auto; /* Dos filas automáticas */
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 600px;
+    margin: var(--spacing-large) auto;
+    padding: var(--spacing-base);
+    background-color: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.img_admin img {
+    max-width: 300px;
+}
+.inputs {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    padding: 1rem .5rem;
+    
+}
+@media only screen and (max-width: 768px) {
+   .formulario {
+    display: flex;
+    flex-direction: column;
+   }
+
+   .img_admin img {
+    max-width: 250px;
+   }
+}
